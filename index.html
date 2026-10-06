@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#142f32" />
+    <meta name="description" content="走进王维《山居秋暝》的三维像素山水。循着八句诗，漫游雨后的空山、月下松林与清泉荷塘。" />
+    <title>山居秋暝 · 诗境</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%23284641'/%3E%3Cpath d='M8 34h32L30 15l-7 10-5-6z' fill='%23e6dcc3'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div id="app">
+      <main class="experience" aria-label="山居秋暝，三维像素山水">
+        <section class="world" aria-label="可拖动环顾的三维山谷">
+          <div id="scene" role="img" aria-label="雨后秋日晚间的体素山谷，包含松林、溪流、竹林、荷塘与山居"></div>
+          <div class="world-shade" aria-hidden="true"></div>
+          <header class="world-header">
+            <a class="brand" href="./" aria-label="诗境首页">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 25h26L21 9l-7 12-5-7z"/><path d="M23 4h4v4h-4z"/></svg>
+              <span>诗境 <span class="brand-divider">/</span> <small>POETRY INTO WORLDS</small></span>
+            </a>
+            <span class="edition">卷一 <i></i> 秋山</span>
+          </header>
+          <div class="scene-caption">
+            <span class="scene-eyebrow"><span class="live-dot"></span> 一首诗，一方天地</span>
+            <h1 id="view-title">山居秋暝</h1>
+            <p id="view-description">雨后的空山里，留一会儿。</p>
+          </div>
+          <div class="scene-footer">
+            <div class="view-label"><span id="view-number">〇</span><div><small>此刻 · 所见</small><span id="view-name">秋山全景</span></div></div>
+            <div class="world-actions">
+              <button id="overview" class="glass-button" aria-label="返回全景">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 3H3v4m10-4h4v4M3 13v4h4m10-4v4h-4M7 10h6m-3-3v6"/></svg>
+                <span>返回全景</span>
+              </button>
+              <button id="motion" class="glass-button icon-button" aria-label="暂停景物动画" aria-pressed="false">
+                <svg id="motion-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10M13 5v10"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="interaction-hint"><svg viewBox="0 0 16 20" aria-hidden="true"><rect x="3" y="1" width="10" height="16" rx="5"/><path d="M8 4v4"/></svg><span class="desktop-hint">拖动环顾 · 滚轮缩放</span><span class="mobile-hint">拖动环顾 · 双指缩放</span></div>
+          <div id="loading" class="loading-screen" role="status">
+            <div class="loading-mountain" aria-hidden="true">山</div>
+            <p id="loading-text">正在走进秋山</p>
+            <div class="loading-track"><span id="loading-progress"></span></div>
+            <small>明月松间照，清泉石上流。</small>
+          </div>
+          <div id="fallback" class="fallback" hidden>
+            <span>山</span><h2>秋山暂未显现</h2><p id="fallback-message">浏览器暂时无法显示 3D 景观。请开启硬件加速，或使用支持 WebGL 的浏览器。</p><button id="retry">重新加载</button>
+          </div>
+        </section>
+        <aside class="poem-panel" aria-label="诗句导航">
+          <div class="panel-top"><span>循诗入境</span><span class="panel-mark" aria-hidden="true">山水有清音</span></div>
+          <div class="poem-heading"><span class="poem-category">唐诗 · 山水</span><h2>山居秋暝</h2><p>唐 <span>·</span> 王维</p></div>
+          <nav id="poem-nav" aria-label="选择诗句，前往对应景观"></nav>
+          <div class="poem-note"><span class="note-line" aria-hidden="true"></span><p>诗里有画，画里有你。</p><small>点击任一句诗，走进它的风景。</small></div>
+          <footer class="panel-footer"><span>八句诗 · 八重境</span><span class="seal" aria-label="诗境">诗<br/>境</span></footer>
+        </aside>
+      </main>
+      <div id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
