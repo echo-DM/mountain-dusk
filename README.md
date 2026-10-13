@@ -20,6 +20,16 @@ pnpm preview
 
 构建结果位于 `dist/`，可部署到任意静态网站服务。
 
+## GitHub Pages 部署
+
+部署成功后的在线地址：[山居秋暝 · 诗境](https://echo-dm.github.io/mountain-dusk/)。
+
+首次部署时，在 GitHub 仓库 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**。
+
+将代码推送到 `main` 分支后，部署工作流会使用 Node.js 24 和 pnpm 11.23.0 安装锁定依赖、构建并发布 `dist/`。也可以在 **Actions → Deploy to GitHub Pages → Run workflow** 中手动触发；进度与部署地址可在对应工作流中查看。
+
+Vite 使用 `base: './'` 生成相对资源路径，支持 `/mountain-dusk/` 子目录部署。本地可用 `pnpm build` 和 `pnpm preview` 检查生产构建。
+
 ## 游览
 
 - 点击任一句诗，镜头约用 2 秒飞往对应景观。
